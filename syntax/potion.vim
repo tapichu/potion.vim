@@ -33,6 +33,6 @@ highlight link potionKeyword Keyword
 highlight link potionFunction Function
 highlight link potionComment Comment
 highlight link potionOperator Operator
-highlight link potionOperator Number
+highlight link potionNumber Number
 
 let b:current_syntax = "potion"
