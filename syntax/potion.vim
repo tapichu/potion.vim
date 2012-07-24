@@ -19,10 +19,20 @@ syntax match potionOperator "\v/"
 syntax match potionOperator "\v\+"
 syntax match potionOperator "\v-"
 syntax match potionOperator "\v\?"
+syntax match potionOperator "\v\="
+syntax match potionOperator "\v:"
+syntax match potionOperator "\v\."
+
+syntax match potionNumber "\v-?\d+"
+syntax match potionNumber "\v-?\d+\.\d+"
+syntax match potionNumber "\v-?0x[0-9a-f]+"
+syntax match potionNumber "\v-?\d+e[+-]\d+"
+syntax match potionNumber "\v-?\d+\.\d+e[+-]\d+"
 
 highlight link potionKeyword Keyword
 highlight link potionFunction Function
 highlight link potionComment Comment
 highlight link potionOperator Operator
+highlight link potionOperator Number
 
 let b:current_syntax = "potion"
