@@ -26,8 +26,8 @@ noremap <script> <buffer> <silent> [[ :call <SID>NextSection(1, 1, 0)<CR>
 noremap <script> <buffer> <silent> ][ :call <SID>NextSection(2, 0, 0)<CR>
 noremap <script> <buffer> <silent> [] :call <SID>NextSection(2, 1, 0)<CR>
 
-noremap <script> <buffer> <silent> ]] :<c-u>call <SID>NextSection(1, 0, 1)<CR>
-noremap <script> <buffer> <silent> [[ :<c-u>call <SID>NextSection(1, 1, 1)<CR>
+vnoremap <script> <buffer> <silent> ]] :<c-u>call <SID>NextSection(1, 0, 1)<CR>
+vnoremap <script> <buffer> <silent> [[ :<c-u>call <SID>NextSection(1, 1, 1)<CR>
 
-noremap <script> <buffer> <silent> ][ :<c-u>call <SID>NextSection(2, 0, 1)<CR>
-noremap <script> <buffer> <silent> [] :<c-u>call <SID>NextSection(2, 1, 1)<CR>
+vnoremap <script> <buffer> <silent> ][ :<c-u>call <SID>NextSection(2, 0, 1)<CR>
+vnoremap <script> <buffer> <silent> [] :<c-u>call <SID>NextSection(2, 1, 1)<CR>
