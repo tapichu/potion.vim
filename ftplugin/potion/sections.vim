@@ -3,7 +3,7 @@ function! s:NextSection(type, backwards)
         let pattern = '\v(\n\n^\S|%^)'
         let flags = 'e'
     elseif a:type == 2
-        let pattern = 'two'
+        let pattern = '\v^\S.*\=.*:$'
         let flags = ''
     endif
 
