@@ -17,7 +17,13 @@ function! PotionShowBytecode()
         echom "ERROR: compilation error."
     else
         " Open a new split and set it up.
-        vsplit __Potion_Bytecode__
+        let buff_num = bufwinnr("__Potion_Bytecode__")
+        if buff_num >= 0
+            execute buff_num . "wincmd w"
+        else
+            vsplit __Potion_Bytecode__
+        endif
+
         normal! ggdG
         setlocal filetype=potionbytecode
         setlocal buftype=nofile
