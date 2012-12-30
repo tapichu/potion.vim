@@ -13,14 +13,18 @@ function! PotionShowBytecode()
     execute "write"
     let bytecode = system(g:potion_command . " -c -V " . bufname("%") . " 2>&1")
 
-    " Open a new split and set it up.
-    vsplit __Potion_Bytecode__
-    normal! ggdG
-    setlocal filetype=potionbytecode
-    setlocal buftype=nofile
+    if v:shell_error != 0
+        echom "ERROR: compilation error."
+    else
+        " Open a new split and set it up.
+        vsplit __Potion_Bytecode__
+        normal! ggdG
+        setlocal filetype=potionbytecode
+        setlocal buftype=nofile
 
-    " Insert the bytecode.
-    call append(0, split(bytecode, '\v\n'))
+        " Insert the bytecode.
+        call append(0, split(bytecode, '\v\n'))
+    endif
 endfunction
 
 nnoremap <buffer> <localleader>r :call PotionCompileAndRunFile()<cr>
