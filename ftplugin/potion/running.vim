@@ -4,11 +4,13 @@ endif
 
 function! PotionCompileAndRunFile()
     silent !clear
+    execute "write"
     execute "!" . g:potion_command . " " . bufname("%")
 endfunction
 
 function! PotionShowBytecode()
     " Get the bytecode.
+    execute "write"
     let bytecode = system(g:potion_command . " -c -V " . bufname("%") . " 2>&1")
 
     " Open a new split and set it up.
